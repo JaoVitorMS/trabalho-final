@@ -53,4 +53,16 @@ public class Membro {
     public void setDados_bicicleta_emprestadas ( Bicicletas dados_bicicleta_emprestadas ) {
         this.dados_bicicleta_emprestadas = dados_bicicleta_emprestadas;
     }
+
+    public boolean verificadorBicicleta(boolean bicicletasEmprestadas) {
+        if (bikeDisponivel == false ){
+            System.out.println("bike indisponivel!");
+            bicicletasEmprestadas = false;
+            return  false;
+        } else {
+            System.out.println("bike disponivel!");
+            bicicletasEmprestadas = true;
+            return true;
+        }
+    }
 }
