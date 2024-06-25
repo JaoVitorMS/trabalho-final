@@ -1,7 +1,18 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import br.com.pucrs.trabalhofinal.clients.CadastroMembro;
+import br.com.pucrs.trabalhofinal.clients.Membro;
+
 public class Clube {
     public static void main ( String[] args ) {
-        System.out.println("ola"); //adicionei ola
+        CadastroMembro cadastro = new CadastroMembro();
+
+        Membro cliente1 = new Membro(123, "Paula Tejano", "Pirituba City");
+        Membro cliente2 = new Membro(1234, "Deyde Costa", "Pirituba City");
+        Membro cliente3 = new Membro(1235, "Tekomo Nakama", "Pirituba City");
+
+        cadastro.adicionarMembro(cliente1);
+        cadastro.adicionarMembro(cliente2);
+        cadastro.adicionarMembro(cliente3);
+        cadastro.exibirMembros();
+
     }
 }
