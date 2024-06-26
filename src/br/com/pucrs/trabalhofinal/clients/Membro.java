@@ -2,6 +2,8 @@ package br.com.pucrs.trabalhofinal.clients;
 
 import br.com.pucrs.trabalhofinal.produtcs.Bicicleta;
 
+import java.util.Objects;
+
 
 public class Membro {
     //atributos: matricula<int>, nome<string>, CIDADE_DE_ORIGEM<final string>, dados_bicicleta_emprestadas<Bicicleta>
@@ -50,7 +52,7 @@ public class Membro {
     public String toString () {
         return "Detalhes do membro: "     + nome +
                 ", numero matricula = "   + matricula +
-                ", CIDADE_DE_ORIGEM = "   + CIDADE_DE_ORIGEM +
-                ", Bicicleta Alugada = "  + dados_bicicleta_emprestadas;
+                ", cidade de origem = "   + CIDADE_DE_ORIGEM +
+                ", bicicletas: = "  + dados_bicicleta_emprestadas;
     }
 }
