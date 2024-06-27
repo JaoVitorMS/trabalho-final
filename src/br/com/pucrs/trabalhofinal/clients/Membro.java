@@ -20,7 +20,7 @@ public class Membro {
         //this.bicicletasEmprestadas = bicicletasEmprestadas;
     }
 
-    boolean alugouBike = false;
+
 
     public int getMatricula () {
         return matricula;
@@ -40,12 +40,6 @@ public class Membro {
 
     public String getCIDADE_DE_ORIGEM () {
         return CIDADE_DE_ORIGEM;
-    }
-
-    protected boolean verificadorAlugouBicicleta (int matricula) {
-        if ( Bicicleta.getDados_bicicleta_emprestadas() == 1) {
-            return true;
-        } else {return false;}
     }
 
     @Override

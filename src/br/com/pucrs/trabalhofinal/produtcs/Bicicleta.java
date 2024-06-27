@@ -69,17 +69,19 @@ public class Bicicleta {
     }
 
     // Método para verificar se a bicicleta já foi alugada
-//    public static boolean alugouBicicleta () {
-//        if (alugouBike == true){ // Se for true é porque já foi alugada
-//            return true;
-//        } else {return false;}
-//    }
-//    public void dadosBicicleta() {
-//        if (alugouBicicleta() == false) {
-//            if (dados_bicicleta_emprestadas == 0) {
-//                dados_bicicleta_emprestadas += 1;
-//            }
-//        }
-//    }
+    public boolean alugouBicicleta() {
+            if (dados_bicicleta_emprestadas == 1) {
+                return true;
+            } else {
+                return false;
+            }
+    }
+    public void dadosBicicleta() {
+        if (alugouBicicleta() == false) {
+            if (dados_bicicleta_emprestadas == 0) {
+                dados_bicicleta_emprestadas += 1;
+           }
+       }
+    }
 
 }
