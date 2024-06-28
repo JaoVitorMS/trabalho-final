@@ -8,23 +8,26 @@ public class Clube {
     public static void main ( String[] args ) {
         Scanner teclado = new Scanner(System.in);
         CadastroMembro cadastro = new CadastroMembro();
+        CadastroBicicletas cadastroBicicletas = new CadastroBicicletas();
+        int opcao;
 
-        System.out.println("---------------MENU---------------");
-        System.out.println("1 - Adicionar membro");
-        System.out.println("2 - Mostrar membros");
-        System.out.println("3 - Buscar membro pelo nome");
-        System.out.println("4 - Adicionar Bicicleta");
-        System.out.println("5 - Mostrar bicicletas");
-        System.out.println("6 - Buscar bicicleta pelo modelo");
-        System.out.println("7 - Emprestar bicicleta");
-        System.out.println("8 - Devolver bicicleta");
-        System.out.println("9 - Quantidade de bicicletas disponíveis");
-        System.out.println("10 - Sair");
-        System.out.println("Digite a opção desejada: ");
+        do{
+            System.out.println("---------------MENU---------------");
+            System.out.println("1 - Adicionar membro");
+            System.out.println("2 - Mostrar membros");
+            System.out.println("3 - Buscar membro pelo nome");
+            System.out.println("4 - Adicionar Bicicleta");
+            System.out.println("5 - Mostrar bicicletas");
+            System.out.println("6 - Buscar bicicleta pelo modelo");
+            System.out.println("7 - Retirar bicicleta");
+            System.out.println("8 - Devolver bicicleta");
+            System.out.println("9 - Quantidade de bicicletas disponíveis");
+            System.out.println("10 - Sair");
+            System.out.print("Digite a opção desejada: ");
+            
+            opcao = teclado.nextInt();
 
-        int opcao = teclado.nextInt();
-
-        switch (opcao){
+            switch (opcao){
             case 1:
                 System.out.println("Digite o nome do membro: ");
                 String nome = teclado.next();
@@ -55,8 +58,31 @@ public class Clube {
                 Bicicleta bicicleta = new Bicicleta(numero, modelo, quantidade);
                 cadastroBicicletas.adicionaBicicleta(bicicleta);
                 break;
-        }
+            
+            case 5:
+                cadastroBicicletas.mostraBicicletas();
+
+            case 6:
+                System.out.println("Digite o modelo da bicicleta para realizar a busca");
+                String bikeBusca = teclado.nextLine();
+                cadastroBicicletas.buscaBicicletaPeloModelo(bikeBusca);
+            
+            case 7:
+                System.out.println("Digite o seu numero de maticula: ");
+                int mat = teclado.nextInt();
+                
+
+            case 8:
+
+            case 9:
+                cadastroBicicletas.totalUnidades();
+
+            } 
+        } while(opcao != 10 );
 
 
+      
+        
+        
     }
 }
