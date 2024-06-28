@@ -17,6 +17,7 @@ public class CadastroBicicletas {
             if (bicicletas[i] == null) {
                 bicicletas[i] = bicicleta;
                 adicionou = true;
+                System.out.println("Bicicleta adicionada com sucesso!");
                 break;
             }
         }
@@ -53,7 +54,7 @@ public class CadastroBicicletas {
 
     //mostraBicicletas(): Mostra os dados das bicicletas armazenadas.
     public void mostraBicicletas () {
-        for (int i = 0; i < bicicletas.length; i++) {
+        for (int i = 0; i < 10; i++) {
             if (bicicletas[i] != null) {
                 System.out.println(bicicletas[i].toString());
             }

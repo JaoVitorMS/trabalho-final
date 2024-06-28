@@ -12,10 +12,10 @@ public class Bicicleta {
 
 
     //Construtor
-    public Bicicleta ( int NumeroBicicleta, String Modelo, int QuantidadeDisponivel ) {
+    public Bicicleta ( int NumeroBicicleta, String Modelo ) {
         this.NumeroBicicleta = NumeroBicicleta;
         this.Modelo = Modelo;
-        this.QuantidadeDisponivel = 10;
+        this.QuantidadeDisponivel = 0;
         this.dados_bicicleta_emprestadas = 0;
     }
     
