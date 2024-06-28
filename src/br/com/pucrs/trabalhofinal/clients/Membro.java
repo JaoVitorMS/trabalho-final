@@ -2,7 +2,7 @@ package br.com.pucrs.trabalhofinal.clients;
 
 import br.com.pucrs.trabalhofinal.produtcs.Bicicleta;
 
-import java.util.Objects;
+
 
 
 public class Membro {
@@ -10,16 +10,13 @@ public class Membro {
     private int matricula;
     private String nome;
     private final String CIDADE_DE_ORIGEM;
-    //protected boolean bicicletasEmprestadas;
     private Bicicleta dados_bicicleta_emprestadas;
 
     public Membro ( int matricula, String nome, String CIDADE_DE_ORIGEM ) {
         this.matricula = matricula;
         this.nome = nome;
-        this.CIDADE_DE_ORIGEM = CIDADE_DE_ORIGEM;
-        //this.bicicletasEmprestadas = bicicletasEmprestadas;
+        this.CIDADE_DE_ORIGEM = CIDADE_DE_ORIGEM;      
     }
-
 
 
     public int getMatricula () {
@@ -42,11 +39,13 @@ public class Membro {
         return CIDADE_DE_ORIGEM;
     }
 
+
     @Override
     public String toString () {
         return "Detalhes do membro: "     + nome +
                 ", numero matricula = "   + matricula +
                 ", cidade de origem = "   + CIDADE_DE_ORIGEM +
                 ", bicicletas: = "  + dados_bicicleta_emprestadas;
+    
     }
 }
