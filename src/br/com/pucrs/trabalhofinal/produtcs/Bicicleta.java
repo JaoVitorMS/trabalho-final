@@ -8,7 +8,7 @@ public class Bicicleta {
     private int NumeroBicicleta;
     private String Modelo;
     private int QuantidadeDisponivel;
-    private static int dados_bicicleta_emprestadas = 0;
+    private int dados_bicicleta_emprestadas = 0;
 
 
     //Construtor
@@ -18,7 +18,7 @@ public class Bicicleta {
         this.QuantidadeDisponivel = 10;
         this.dados_bicicleta_emprestadas = 0;
     }
-    // static boolean alugouBike = false;
+    
 
     //Getters e Setters
     public int getNumeroBicicleta () {
@@ -45,7 +45,7 @@ public class Bicicleta {
         this.QuantidadeDisponivel = QuantidadeDisponivel;
     }
 
-    public static int getDados_bicicleta_emprestadas () {
+    public int getDados_bicicleta_emprestadas () {
         return dados_bicicleta_emprestadas;
     }
 
@@ -76,12 +76,6 @@ public class Bicicleta {
                 return false;
             }
     }
-    public void dadosBicicleta() {
-        if (alugouBicicleta() == false) {
-            if (dados_bicicleta_emprestadas == 0) {
-                dados_bicicleta_emprestadas += 1;
-           }
-       }
-    }
+   
 
 }
