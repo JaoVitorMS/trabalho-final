@@ -9,6 +9,8 @@ public class Clube {
         Scanner teclado = new Scanner(System.in);
         CadastroMembro cadastro = new CadastroMembro();
         CadastroBicicletas cadastroBicicletas = new CadastroBicicletas();
+        Bicicleta bicicleta = null;
+        Membro membro = null;
         int opcao;
 
         do{
@@ -38,7 +40,7 @@ public class Clube {
                 teclado.nextLine();
                 System.out.println("Digite a cidade de origem do membro: ");
                 String cidade = teclado.next();
-                Membro membro = new Membro(matricula, nome, cidade);
+                membro = new Membro(matricula, nome, cidade, 0);
                 cadastro.adicionarMembro(membro);
                 System.out.println("Cadastrado com sucesso!");
                 break;
@@ -61,7 +63,7 @@ public class Clube {
                 System.out.println("Digite o número da bicicleta: ");
                 int numero = teclado.nextInt();
                 teclado.nextLine();
-                Bicicleta bicicleta = new Bicicleta(numero, modelo);
+                bicicleta = new Bicicleta(numero, modelo);
                 cadastroBicicletas.adicionaBicicleta(bicicleta);
                 break;
             
@@ -81,7 +83,8 @@ public class Clube {
                 case 7:
                 System.out.println("Digite os 3 primeiro digitos do cpf: ");
                 int mat = teclado.nextInt();
-                teclado.nextLine();
+                bicicleta.RetirarBicicleta(mat);
+                cadastro.atualizarMembro(mat);
                 break;
 
             case 8:
