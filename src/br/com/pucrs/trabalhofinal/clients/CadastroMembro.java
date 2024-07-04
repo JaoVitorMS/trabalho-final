@@ -38,4 +38,27 @@ public class CadastroMembro{
             }
         }
     }
+    public void atualizarMembro (int matricula) {
+        for (int i = 0; i < membros.length; i++) {
+            if (membros[i] != null && membros[i].getMatricula() == matricula) {
+                if (membros[i].getDados_bicicleta_emprestadas() == 0) {
+                    membros[i].setDados_bicicleta_emprestadas(membros[i].getDados_bicicleta_emprestadas() + 1);
+                } else if (membros[i].getDados_bicicleta_emprestadas() == 1) {
+                    System.out.println("Voce ja tem uma bicicleta emprestada");
+                }
+            }
+        }
+    }
+
+    public boolean dadoBike (int matricula) {
+        boolean alugado = false;
+        for (int i = 0; i < membros.length; i++) {
+            if (membros[i] != null && membros[i].getMatricula() == matricula) {
+                if (membros[i].getDados_bicicleta_emprestadas() == 1) {
+                    alugado = true;
+                }
+            }
+        }
+        return  alugado;
+    }
 }
