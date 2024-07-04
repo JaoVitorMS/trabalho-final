@@ -17,6 +17,7 @@ public class CadastroBicicletas {
             if (bicicletas[i] == null) {
                 bicicletas[i] = bicicleta;
                 adicionou = true;
+                bicicletas[i].setQuantidadeDisponivel(bicicleta.getQuantidadeDisponivel() + bicicletas.length);
                 System.out.println("Bicicleta adicionada com sucesso!");
                 break;
             }
