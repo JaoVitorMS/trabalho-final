@@ -10,12 +10,13 @@ public class Membro {
     private int matricula;
     private String nome;
     private final String CIDADE_DE_ORIGEM;
-    private Bicicleta dados_bicicleta_emprestadas;
+    private int dados_bicicleta_emprestadas;
 
-    public Membro ( int matricula, String nome, String CIDADE_DE_ORIGEM ) {
+    public Membro ( int matricula, String nome, String CIDADE_DE_ORIGEM, int dados_bicicleta_emprestadas ) {
         this.matricula = matricula;
         this.nome = nome;
-        this.CIDADE_DE_ORIGEM = CIDADE_DE_ORIGEM;      
+        this.CIDADE_DE_ORIGEM = CIDADE_DE_ORIGEM;
+        this.dados_bicicleta_emprestadas = 0;
     }
 
 
@@ -39,6 +40,13 @@ public class Membro {
         return CIDADE_DE_ORIGEM;
     }
 
+    public int getDados_bicicleta_emprestadas () {
+        return dados_bicicleta_emprestadas;
+    }
+
+    public void setDados_bicicleta_emprestadas ( int dados_bicicleta_emprestadas ) {
+        this.dados_bicicleta_emprestadas = dados_bicicleta_emprestadas;
+    }
 
     @Override
     public String toString () {
