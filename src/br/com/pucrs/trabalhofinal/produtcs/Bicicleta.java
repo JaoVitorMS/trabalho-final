@@ -1,6 +1,8 @@
 package br.com.pucrs.trabalhofinal.produtcs;
 
+import br.com.pucrs.trabalhofinal.clients.CadastroMembro;
 import br.com.pucrs.trabalhofinal.clients.Membro;
+
 
 
 public class Bicicleta {
@@ -8,7 +10,7 @@ public class Bicicleta {
     private int NumeroBicicleta;
     private String Modelo;
     private int QuantidadeDisponivel;
-    private int dados_bicicleta_emprestadas = 0;
+
 
 
     //Construtor
@@ -16,9 +18,9 @@ public class Bicicleta {
         this.NumeroBicicleta = NumeroBicicleta;
         this.Modelo = Modelo;
         this.QuantidadeDisponivel = 0;
-        this.dados_bicicleta_emprestadas = 0;
     }
-    
+
+    CadastroMembro cadastroMembro = new CadastroMembro();
 
     //Getters e Setters
     public int getNumeroBicicleta () {
@@ -45,37 +47,32 @@ public class Bicicleta {
         this.QuantidadeDisponivel = QuantidadeDisponivel;
     }
 
-    public int getDados_bicicleta_emprestadas () {
-        return dados_bicicleta_emprestadas;
-    }
 
 
     //Método para realizar emprestimo da bicicleta
-    public void RetirarBicicleta ( Membro matricula ) {
-        if (QuantidadeDisponivel > 0) {
-            QuantidadeDisponivel--;
-            dados_bicicleta_emprestadas = 1;
+    public void RetirarBicicleta ( int matricula ) {
+        if (QuantidadeDisponivel > 0 && cadastroMembro.dadoBike(matricula) == false) {
+            QuantidadeDisponivel -= 1;
             System.out.println("Bicicleta retirada com sucesso!");
-        } else {
+        }
+        else if (cadastroMembro.dadoBike(matricula) == true) {
+            System.out.println("Quantidade maxima atingida!");
+        } else if (QuantidadeDisponivel == 0) {
             System.out.println("Não há bicicletas disponíveis no momento.");
         }
     }
 
     //Método para realizar devolução da bicicleta
-    public void DevolverBicicleta ( Membro matricula ) {
+    public void DevolverBicicleta ( int matricula ) {
         QuantidadeDisponivel++;
-        dados_bicicleta_emprestadas = 0;
         System.out.println("Bicicleta devolvida com sucesso!");
     }
 
-    // Método para verificar se a bicicleta já foi alugada
-    public boolean alugouBicicleta() {
-            if (dados_bicicleta_emprestadas == 1) {
-                return true;
-            } else {
-                return false;
-            }
+    @Override
+    public String toString () {
+        return "Bicicleta{" +
+                "NumeroBicicleta=" + NumeroBicicleta +
+                ", Modelo='" + Modelo + '\'' +
+                '}';
     }
-   
-
 }
