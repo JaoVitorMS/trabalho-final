@@ -35,7 +35,7 @@ public class Clube {
                 case 1:
                 System.out.println("Digite o nome do membro: ");
                 String nome = teclado.next();
-                System.out.println("Digite os 3 primeiros digitos do cpf do membro: ");
+                System.out.println("Digite a sua matricula de membro: ");
                 int matricula = teclado.nextInt();
                 teclado.nextLine();
                 System.out.println("Digite a cidade de origem do membro: ");
@@ -81,18 +81,21 @@ public class Clube {
 
             //Retirar bicicleta
                 case 7:
-                System.out.println("Digite os 3 primeiro digitos do cpf: ");
+                System.out.println("Digite sua matricula: ");
                 int mat = teclado.nextInt();
                 bicicleta.RetirarBicicleta(mat);
                 cadastro.atualizarMembro(mat);
                 break;
 
             case 8:
-
+                System.out.println("Digite sua matricula: ");
+                mat = teclado.nextInt();
+                bicicleta.DevolverBicicleta(mat);
+                cadastro.atualizarMembro(mat);
                 break;
 
             case 9:
-                cadastroBicicletas.totalUnidades();
+                System.out.println(cadastroBicicletas.totalUnidades());
                 break;
 
             } 

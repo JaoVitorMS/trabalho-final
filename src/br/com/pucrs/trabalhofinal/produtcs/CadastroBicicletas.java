@@ -17,7 +17,8 @@ public class CadastroBicicletas {
             if (bicicletas[i] == null) {
                 bicicletas[i] = bicicleta;
                 adicionou = true;
-                bicicletas[i].setQuantidadeDisponivel(bicicleta.getQuantidadeDisponivel() + bicicletas.length);
+                int valor = bicicletas[i].getNumeroBicicleta();
+                bicicletas[i].setQuantidadeDisponivel(valor++);
                 System.out.println("Bicicleta adicionada com sucesso!");
                 break;
             }
@@ -41,16 +42,25 @@ public class CadastroBicicletas {
         return bicicleta;
     }
 
-    //totalUnidades(): Retorna o somatório de todas as quantidades de bicicletas
-    //disponíveis para empréstimo.
-    public int totalUnidades () {
-        int total = 0;
+    //quantidadeEspacosNaoNulos: Retorna a quantidade de espaços não nulos no array de bicicletas.
+    public int totalUnidades() {
+        int count = 0;
         for (int i = 0; i < bicicletas.length; i++) {
             if (bicicletas[i] != null) {
-                total += bicicletas[i].getQuantidadeDisponivel();
+                count++;
             }
         }
-        return total;
+        return count;
+    }
+
+    public void aumentarQuantidadeBicicletas(){
+        int quantidade = totalUnidades() + 1;
+        
+    }
+
+    public void diminuirQuantidadeBicicletas(){
+        int quantidade = totalUnidades() - 1;
+        
     }
 
     //mostraBicicletas(): Mostra os dados das bicicletas armazenadas.

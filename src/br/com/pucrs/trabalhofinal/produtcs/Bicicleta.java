@@ -21,6 +21,7 @@ public class Bicicleta {
     }
 
     CadastroMembro cadastroMembro = new CadastroMembro();
+    CadastroBicicletas cadastroBicicletas = new CadastroBicicletas();
 
     //Getters e Setters
     public int getNumeroBicicleta () {
@@ -52,7 +53,7 @@ public class Bicicleta {
     //Método para realizar emprestimo da bicicleta
     public void RetirarBicicleta ( int matricula ) {
         if (QuantidadeDisponivel > 0 && cadastroMembro.dadoBike(matricula) == false) {
-            QuantidadeDisponivel -= 1;
+            cadastroBicicletas.diminuirQuantidadeBicicletas();
             System.out.println("Bicicleta retirada com sucesso!");
         }
         else if (cadastroMembro.dadoBike(matricula) == true) {
@@ -64,15 +65,18 @@ public class Bicicleta {
 
     //Método para realizar devolução da bicicleta
     public void DevolverBicicleta ( int matricula ) {
-        QuantidadeDisponivel++;
-        System.out.println("Bicicleta devolvida com sucesso!");
+        if (QuantidadeDisponivel >= 0 && cadastroMembro.dadoBike(matricula) == true) {
+            cadastroBicicletas.aumentarQuantidadeBicicletas();
+            System.out.println("Bicicleta devolvida com sucesso!");
+        }
+        else if (cadastroMembro.dadoBike(matricula) == false) {
+            System.out.println("Você não alugou nenhuma bicicleta.");
+        }
     }
 
     @Override
     public String toString () {
-        return "Bicicleta{" +
-                "NumeroBicicleta=" + NumeroBicicleta +
-                ", Modelo='" + Modelo + '\'' +
-                '}';
+        return "Bicicletas: " + NumeroBicicleta +'\'' +
+                ", Modelo = " + Modelo;
     }
 }
