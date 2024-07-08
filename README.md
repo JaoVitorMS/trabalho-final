@@ -24,3 +24,7 @@ Este é nosso trabalho final.
 
 </details>
 
+> [!TIP]
+> Links importantes abaixo.
+>  * Youtube: https://youtu.be/EmREZCRAVQc
+>  * Github: https://github.com/JaoVitorMS/trabalho-final
